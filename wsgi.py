@@ -43,6 +43,11 @@ framework.
 
 """
 import os
+import sys
+
+path = "/var/ngeob"
+if path not in sys.path:
+    sys.path.append(path)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "autotest.settings")
 
