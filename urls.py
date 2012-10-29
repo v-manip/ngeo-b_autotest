@@ -46,4 +46,6 @@ urlpatterns = patterns('',
 
     # Enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+    (r'^ingest', 'ngeo_browse_server.control.views.ingest')
 )
