@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rep:browseReport xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport http://ngeo.eo.esa.int/schema/browseReport/browseReport.xsd" version="1.1">
+	<rep:responsibleOrgName>ESA</rep:responsibleOrgName>
+	<rep:dateTime>2012-10-02T09:30:01Z</rep:dateTime>
+	<rep:browseType>OPTICAL</rep:browseType>
+	<rep:browse>
+		<rep:browseIdentifier>b_id_10</rep:browseIdentifier>
+		<rep:fileName>ATS_TOA_1P_20100719_213253.jpg</rep:fileName>
+		<rep:imageType>Jpeg</rep:imageType>
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
+		<rep:footprint nodeNumber="5">
+			<rep:colRowList>128 129 0 129 0 0 128 0 128 129</rep:colRowList>
+			<rep:coordList>49.4 0.3 48.17 -6.4 52.53 -8.72 53.84 -1.38 49.4 0.3</rep:coordList>
+		</rep:footprint>
+		<rep:startTime>2010-07-19T21:32:53Z</rep:startTime>
+		<rep:endTime>2010-07-19T21:34:09Z</rep:endTime>
+	</rep:browse>
+</rep:browseReport>
