@@ -3,6 +3,7 @@
         "pk": "TEST_SAR", 
         "model": "config.browselayer", 
         "fields": {
+            "browse_type": "SAR", 
             "title": "TESTTITLE_SAR", 
             "description": "", 
             "browse_access_policy": "OPEN", 
@@ -12,6 +13,7 @@
             "b_band": null, 
             "radiometric_interval_min": null, 
             "radiometric_interval_max": null, 
+            "grid": "urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad", 
             "lowest_map_level": null, 
             "highest_map_level": null
         }
@@ -20,6 +22,7 @@
         "pk": "TEST_OPTICAL", 
         "model": "config.browselayer", 
         "fields": {
+            "browse_type": "OPTICAL", 
             "title": "TESTTITLE_OPTICAL", 
             "description": "", 
             "browse_access_policy": "OPEN", 
@@ -29,22 +32,9 @@
             "b_band": null, 
             "radiometric_interval_min": null, 
             "radiometric_interval_max": null, 
+            "grid": "urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad", 
             "lowest_map_level": null, 
             "highest_map_level": null
-        }
-    }, 
-    {
-        "pk": "SAR", 
-        "model": "config.browsetype", 
-        "fields": {
-            "browse_layer": "TEST_SAR"
-        }
-    }, 
-    {
-        "pk": "OPTICAL", 
-        "model": "config.browsetype", 
-        "fields": {
-            "browse_layer": "TEST_OPTICAL"
         }
     }
 ]
