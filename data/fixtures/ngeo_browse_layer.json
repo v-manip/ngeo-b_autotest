@@ -1,9 +1,9 @@
 [
     {
-        "pk": "TEST", 
+        "pk": "TEST_SAR", 
         "model": "config.browselayer", 
         "fields": {
-            "title": "TESTTITLE", 
+            "title": "TESTTITLE_SAR", 
             "description": "", 
             "browse_access_policy": "OPEN", 
             "contains_vertical_curtains": false, 
@@ -12,15 +12,39 @@
             "b_band": null, 
             "radiometric_interval_min": null, 
             "radiometric_interval_max": null, 
-            "lowest_map_level": null
-            "highest_map_level": null, 
+            "lowest_map_level": null, 
+            "highest_map_level": null
         }
     }, 
     {
-        "pk": "TESTTYPE", 
+        "pk": "TEST_OPTICAL", 
+        "model": "config.browselayer", 
+        "fields": {
+            "title": "TESTTITLE_OPTICAL", 
+            "description": "", 
+            "browse_access_policy": "OPEN", 
+            "contains_vertical_curtains": false, 
+            "r_band": null, 
+            "g_band": null, 
+            "b_band": null, 
+            "radiometric_interval_min": null, 
+            "radiometric_interval_max": null, 
+            "lowest_map_level": null, 
+            "highest_map_level": null
+        }
+    }, 
+    {
+        "pk": "SAR", 
         "model": "config.browsetype", 
         "fields": {
-            "browse_layer": "TEST"
+            "browse_layer": "TEST_SAR"
+        }
+    }, 
+    {
+        "pk": "OPTICAL", 
+        "model": "config.browsetype", 
+        "fields": {
+            "browse_layer": "TEST_OPTICAL"
         }
     }
 ]

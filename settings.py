@@ -49,15 +49,22 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',                  # Use 'spatialite' or change to 'postgis'.
-        'NAME': 'ngeo',  # Or path to database file if using spatialite.
-        #'TEST_NAME': '/var/ngeob/autotest/data/test-config.sqlite', # Required for certain test cases, but slower!
-        'USER': 'vagrant',                                                             # Not used with spatialite.
-        'PASSWORD': 'vagrant',                                                         # Not used with spatialite.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',                     # Use 'postgis' or'spatialite'.
+        'NAME': 'ngeo',                                                         # Or path to database file if using spatialite.
+        #'TEST_NAME': '/var/ngeob/autotest/data/test-config.sqlite',             # Required for certain test cases, but slower!
+        'USER': 'vagrant',                                                      # Not used with spatialite.
+        'PASSWORD': 'vagrant',                                                  # Not used with spatialite.
         'HOST': '',                                                             # Set to empty string for localhost. Not used with spatialite.
         'PORT': '',                                                             # Set to empty string for default. Not used with spatialite.
+    },
+    'mapcache': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'autotest/data/mapcache.sqlite',
+        #'TEST_NAME': '/var/ngeob/autotest/data/test-config.sqlite',
     }
 }
+
+DATABASE_ROUTERS = ['ngeo_browse_server.dbrouters.MapCacheRouter', ]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -178,6 +185,7 @@ INSTALLED_APPS = (
     # Enable ngEO Browse Server:
     'ngeo_browse_server.config',
     'ngeo_browse_server.control',
+    'ngeo_browse_server.mapcache',
 )
 
 # A sample logging configuration. The only tangible logging
