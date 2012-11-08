@@ -1,1 +1,26 @@
-[{"pk": "TEST", "model": "config.browselayer", "fields": {"contains_vertical_curtains": false, "b_band": null, "radiometric_interval_max": null, "description": "", "title": "TESTTITLE", "highest_map_level": null, "g_band": null, "r_band": null, "radiometric_interval_min": null, "browse_access_policy": "OPEN", "lowest_map_level": null}}, {"pk": "TESTTYPE", "model": "config.browsetype", "fields": {"browse_layer": "TEST"}}]
+[
+    {
+        "pk": "TEST", 
+        "model": "config.browselayer", 
+        "fields": {
+            "title": "TESTTITLE", 
+            "description": "", 
+            "browse_access_policy": "OPEN", 
+            "contains_vertical_curtains": false, 
+            "r_band": null, 
+            "g_band": null, 
+            "b_band": null, 
+            "radiometric_interval_min": null, 
+            "radiometric_interval_max": null, 
+            "lowest_map_level": null
+            "highest_map_level": null, 
+        }
+    }, 
+    {
+        "pk": "TESTTYPE", 
+        "model": "config.browsetype", 
+        "fields": {
+            "browse_layer": "TEST"
+        }
+    }
+]

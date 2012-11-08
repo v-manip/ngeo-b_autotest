@@ -1,1 +1,29 @@
-[{"pk": 1, "model": "coverages.eometadatarecord", "fields": {"footprint": "MULTIPOLYGON (((0.0000000000000000 0.0000000000000000, 0.0000000000000000 1.0000000000000000, 1.0000000000000000 1.0000000000000000, 1.0000000000000000 0.0000000000000000, 0.0000000000000000 0.0000000000000000)))", "timestamp_end": "2012-11-02T15:14:24.999Z", "timestamp_begin": "2012-11-02T15:14:24.999Z", "eo_gml": ""}}, {"pk": 1, "model": "coverages.datasetseriesrecord", "fields": {"rect_stitched_mosaics": [], "data_sources": [], "ref_datasets": [], "eo_metadata": 1, "rect_datasets": [], "eo_id": "TEST"}}, {"pk": 1, "model": "core.resource", "fields": {}}]
+[
+    {
+        "pk": 1, 
+        "model": "coverages.eometadatarecord", 
+        "fields": {
+            "footprint": "MULTIPOLYGON (((0.0000000000000000 0.0000000000000000, 0.0000000000000000 1.0000000000000000, 1.0000000000000000 1.0000000000000000, 1.0000000000000000 0.0000000000000000, 0.0000000000000000 0.0000000000000000)))", 
+            "timestamp_end": "2012-11-02T15:14:24.999Z", 
+            "timestamp_begin": "2012-11-02T15:14:24.999Z", 
+            "eo_gml": ""
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "coverages.datasetseriesrecord", 
+        "fields": {
+            "rect_stitched_mosaics": [], 
+            "data_sources": [], 
+            "ref_datasets": [], 
+            "eo_metadata": 1, 
+            "rect_datasets": [], 
+            "eo_id": "TEST"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "core.resource", 
+        "fields": {}
+    }
+]
