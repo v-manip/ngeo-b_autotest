@@ -206,12 +206,22 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'debug_file':{
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log'
         }
     },
     'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
+        'eoxserver': {
+            'handlers': ['debug_file'],
+            'level': 'DEBUG' if DEBUG else 'INFO',
+            'propagate': True,
+        },
+        'ngeo_browse_server': {
+            'handlers': ['debug_file'],
+            'level': 'DEBUG' if DEBUG else 'INFO',
             'propagate': True,
         },
     }
