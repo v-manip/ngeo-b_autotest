@@ -5,7 +5,7 @@
 	<rep:browseType>SAR</rep:browseType>
 	<rep:browse>
 		<rep:browseIdentifier>b_id_3</rep:browseIdentifier>
-		<rep:fileName>ASA_IM__0P_20100807_101327_short.jpg</rep:fileName>
+		<rep:fileName>ASA_IM__0P_20100807_101327.jpg</rep:fileName>
 		<rep:imageType>Jpeg</rep:imageType>
 		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
 		<rep:footprint nodeNumber="5">
