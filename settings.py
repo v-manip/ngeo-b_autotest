@@ -51,7 +51,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',                     # Use 'postgis' or'spatialite'.
         'NAME': 'ngeo',                                                         # Or path to database file if using spatialite.
-        #'TEST_NAME': '/var/ngeob/autotest/data/test-config.sqlite',             # Required for certain test cases, but slower!
+        #'TEST_NAME': '/var/ngeob/autotest/data/test-data.sqlite',              # Required for certain test cases, but slower!
         'USER': 'vagrant',                                                      # Not used with spatialite.
         'PASSWORD': 'vagrant',                                                  # Not used with spatialite.
         'HOST': '',                                                             # Set to empty string for localhost. Not used with spatialite.
@@ -60,7 +60,7 @@ DATABASES = {
     'mapcache': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'autotest/data/mapcache.sqlite',
-        #'TEST_NAME': '/var/ngeob/autotest/data/test-config.sqlite',
+        #'TEST_NAME': '/var/ngeob/autotest/data/test-mapcache.sqlite',
     }
 }
 
