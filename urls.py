@@ -27,6 +27,10 @@
 # THE SOFTWARE.
 #-------------------------------------------------------------------------------
 
+"""
+URLs config for ngEO Browse Server's autotest instance.
+
+"""
 from django.conf.urls import patterns, include, url
 
 # Enable the admin:
