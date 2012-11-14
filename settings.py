@@ -210,7 +210,7 @@ LOGGING = {
         'debug_file':{
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'debug.log'
+            'filename': 'autotest/logs/debug.log'
         }
     },
     'loggers': {
