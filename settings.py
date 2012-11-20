@@ -36,7 +36,7 @@ from os.path import join
 PROJECT_DIR = '/var/ngeob/autotest'
 PROJECT_URL_PREFIX = ''
 
-TEST_RUNNER = 'eoxserver.testing.core.EOxServerTestRunner'
+#TEST_RUNNER = 'eoxserver.testing.core.EOxServerTestRunner'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -47,11 +47,12 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',                     # Use 'postgis' or'spatialite'.
         'NAME': 'ngeo',                                                         # Or path to database file if using spatialite.
-        #'TEST_NAME': '/var/ngeob/autotest/data/test-data.sqlite',              # Required for certain test cases, but slower!
         'USER': 'vagrant',                                                      # Not used with spatialite.
         'PASSWORD': 'vagrant',                                                  # Not used with spatialite.
         'HOST': '',                                                             # Set to empty string for localhost. Not used with spatialite.
@@ -60,7 +61,6 @@ DATABASES = {
     'mapcache': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'autotest/data/mapcache.sqlite',
-        #'TEST_NAME': '/var/ngeob/autotest/data/test-mapcache.sqlite',
     }
 }
 
@@ -188,41 +188,49 @@ INSTALLED_APPS = (
     'ngeo_browse_server.mapcache',
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
+
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
         }
     },
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
+    'formatters': {
+        'simple': {
+            'format': '%(levelname)s: %(message)s'
         },
-        'debug_file':{
+        'verbose': {
+            'format': '[%(asctime)s][%(module)s] %(levelname)s: %(message)s'
+        }
+    },
+    'handlers': {
+        'eoxserver_file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'autotest/logs/debug.log'
+            'filename': join(PROJECT_DIR, 'logs', 'eoxserver.log'),
+            'formatter': 'verbose',
+            'filters': [],
+        },
+        'ngeo_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': join(PROJECT_DIR, 'logs', 'ngeo.log'),
+            'formatter': 'verbose',
+            'filters': [],
         }
     },
     'loggers': {
         'eoxserver': {
-            'handlers': ['debug_file'],
+            'handlers': ['eoxserver_file'],
             'level': 'DEBUG' if DEBUG else 'INFO',
-            'propagate': True,
+            'propagate': False,
         },
         'ngeo_browse_server': {
-            'handlers': ['debug_file'],
+            'handlers': ['ngeo_file'],
             'level': 'DEBUG' if DEBUG else 'INFO',
-            'propagate': True,
+            'propagate': False,
         },
     }
 }
