@@ -49,13 +49,10 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',                     # Use 'postgis' or'spatialite'.
-        'NAME': 'ngeo',                                                         # Or path to database file if using spatialite.
-        #'TEST_NAME': '/var/ngeob/autotest/data/test-data.sqlite',              # Required for certain test cases, but slower!
-        'USER': 'vagrant',                                                      # Not used with spatialite.
-        'PASSWORD': 'vagrant',                                                  # Not used with spatialite.
-        'HOST': '',                                                             # Set to empty string for localhost. Not used with spatialite.
-        'PORT': '',                                                             # Set to empty string for default. Not used with spatialite.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'ngeo',
+        'USER': 'vagrant',
+        'PASSWORD': 'vagrant',
     },
     'mapcache': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -210,7 +207,7 @@ LOGGING = {
         'debug_file':{
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'autotest/logs/debug.log'
+            'filename': '/var/ngeob/autotest/logs/debug.log'
         }
     },
     'loggers': {

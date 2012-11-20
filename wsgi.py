@@ -45,11 +45,11 @@ framework.
 import os
 import sys
 
-path = "/var/ngeob"
+path = "/var/ngeob/autotest"
 if path not in sys.path:
     sys.path.append(path)
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "autotest.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
