@@ -236,9 +236,11 @@ LOGGING = {
 }
 
 FIXTURE_DIRS = (
-    join(PROJECT_DIR, '/var/ngeob/autotest/data/fixtures'),
+    join(PROJECT_DIR, 'data/fixtures'),
 )
 
 # Set this variable if the path to the instance cannot be resolved 
 # automatically, e.g. in case of redirects
 #FORCE_SCRIPT_NAME="/path/to/instance/"
+
+
