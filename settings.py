@@ -51,12 +51,10 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',                     # Use 'postgis' or'spatialite'.
-        'NAME': 'ngeo',                                                         # Or path to database file if using spatialite.
-        'USER': 'vagrant',                                                      # Not used with spatialite.
-        'PASSWORD': 'vagrant',                                                  # Not used with spatialite.
-        'HOST': '',                                                             # Set to empty string for localhost. Not used with spatialite.
-        'PORT': '',                                                             # Set to empty string for default. Not used with spatialite.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'ngeo',
+        'USER': 'vagrant',
+        'PASSWORD': 'vagrant',
     },
     'mapcache': {
         'ENGINE': 'django.db.backends.sqlite3',
