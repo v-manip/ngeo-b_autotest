@@ -47,8 +47,6 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
@@ -186,7 +184,6 @@ INSTALLED_APPS = (
     'ngeo_browse_server.mapcache',
 )
 
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -240,5 +237,3 @@ FIXTURE_DIRS = (
 # Set this variable if the path to the instance cannot be resolved 
 # automatically, e.g. in case of redirects
 #FORCE_SCRIPT_NAME="/path/to/instance/"
-
-
