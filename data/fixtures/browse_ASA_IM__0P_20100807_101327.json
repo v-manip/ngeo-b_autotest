@@ -138,5 +138,14 @@
         "fields": {
             "path": "/var/ngeob/autotest/data/optimized/ASA_IM__0P_20100807_101327_proc.xml"
         }
+    }, 
+    {
+        "pk": 1, 
+        "model": "mapcache.time", 
+        "fields": {
+            "source": "TEST_SAR", 
+            "start_time": "2010-08-07T10:13:37Z", 
+            "end_time": "2010-08-07T10:14:06Z"
+        }
     }
 ]
