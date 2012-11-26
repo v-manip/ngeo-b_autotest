@@ -81,13 +81,13 @@
         "pk": 3, 
         "model": "config.browse", 
         "fields": {
+            "coverage_id": "b_id_3",
             "reference_system_identifier": "EPSG:4326", 
             "browse_report": 3, 
             "image_type": "Jpeg", 
             "file_name": "ASA_IM__0P_20100807_101327.jpg", 
             "start_time": "2010-08-07T10:13:37Z", 
-            "end_time": "2010-08-07T10:14:06Z", 
-            "geo_type": "modelInGeotiff"
+            "end_time": "2010-08-07T10:14:06Z"
         }
     }, 
     {
