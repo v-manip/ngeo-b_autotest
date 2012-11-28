@@ -78,7 +78,7 @@
         }
     }, 
     {
-        "pk": 3, 
+        "pk": "b_id_3", 
         "model": "config.browse", 
         "fields": {
             "coverage_id": "b_id_3",
@@ -96,12 +96,12 @@
         "model": "config.browseidentifier", 
         "fields": {
             "value": "b_id_3", 
-            "browse": 3, 
+            "browse": "b_id_3", 
             "browse_layer": "TEST_SAR"
         }
     }, 
     {
-        "pk": 3, 
+        "pk": "b_id_3", 
         "model": "config.footprintbrowse", 
         "fields": {
             "coord_list": "51.8 2.45 51.58 3.99 49.89 3.36 50.1 1.87 51.8 2.45", 
