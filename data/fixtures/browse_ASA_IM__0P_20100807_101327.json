@@ -82,6 +82,7 @@
         "model": "config.browse", 
         "fields": {
             "coverage_id": "b_id_3",
+            "browse_layer": "TEST_SAR", 
             "reference_system_identifier": "EPSG:4326", 
             "browse_report": 3, 
             "image_type": "Jpeg", 
@@ -91,10 +92,12 @@
         }
     }, 
     {
-        "pk": "b_id_3", 
+        "pk": 1, 
         "model": "config.browseidentifier", 
         "fields": {
-            "browse": 3
+            "value": "b_id_3", 
+            "browse": 3, 
+            "browse_layer": "TEST_SAR"
         }
     }, 
     {
