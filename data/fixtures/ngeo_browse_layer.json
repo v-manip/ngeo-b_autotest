@@ -14,8 +14,8 @@
             "radiometric_interval_min": null, 
             "radiometric_interval_max": null, 
             "grid": "urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad", 
-            "lowest_map_level": null, 
-            "highest_map_level": null
+            "lowest_map_level": 0, 
+            "highest_map_level": 8
         }
     }, 
     {
@@ -33,8 +33,8 @@
             "radiometric_interval_min": null, 
             "radiometric_interval_max": null, 
             "grid": "urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad", 
-            "lowest_map_level": null, 
-            "highest_map_level": null
+            "lowest_map_level": 0, 
+            "highest_map_level": 8
         }
     }
 ]
