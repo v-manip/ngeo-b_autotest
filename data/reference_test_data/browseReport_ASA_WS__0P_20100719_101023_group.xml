@@ -7,7 +7,7 @@
 		<rep:browseIdentifier>b_id_6</rep:browseIdentifier>
 		<rep:fileName>ASA_WS__0P_20100719_101023.jpg</rep:fileName>
 		<rep:imageType>Jpeg</rep:imageType>
-		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
 		<rep:footprint nodeNumber="5">
 			<rep:colRowList>0 0 480 0 480 453 0 453 0 0</rep:colRowList>
 			<rep:coordList>53.44 -0.65 52.68 5.45 49.11 4.07 49.85 -1.59 53.44 -0.65</rep:coordList>
@@ -19,7 +19,7 @@
 		<rep:browseIdentifier>b_id_7</rep:browseIdentifier>
 		<rep:fileName>ASA_WS__0P_20100722_101601.jpg</rep:fileName>
 		<rep:imageType>Jpeg</rep:imageType>
-		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
 		<rep:footprint nodeNumber="5">
 			<rep:colRowList>0 0 477 0 477 453 0 453 0 0</rep:colRowList>
 			<rep:coordList>53.89 -1.98 53.13 4.19 49.56 2.8 50.3 -2.91 53.89 -1.98</rep:coordList>
@@ -27,11 +27,11 @@
 		<rep:startTime>2010-07-22T10:16:01Z</rep:startTime>
 		<rep:endTime>2010-07-22T10:17:02Z</rep:endTime>
 	</rep:browse>
-		<rep:browse>
+	<rep:browse>
 		<rep:browseIdentifier>b_id_8</rep:browseIdentifier>
 		<rep:fileName>ASA_WS__0P_20100725_102231.jpg</rep:fileName>
 		<rep:imageType>Jpeg</rep:imageType>
-		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
 		<rep:footprint nodeNumber="5">
 			<rep:colRowList>0 0 471 0 471 453 0 453 0 0</rep:colRowList>
 			<rep:coordList>51.22 -4.11 50.47 1.71 46.9 0.43 47.63 -5 51.22 -4.11</rep:coordList>
