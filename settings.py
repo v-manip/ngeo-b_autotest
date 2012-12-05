@@ -56,7 +56,7 @@ DATABASES = {
     },
     'mapcache': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'autotest/data/mapcache.sqlite',
+        'NAME': '/var/ngeob_data/mapcache.sqlite',
     }
 }
 
