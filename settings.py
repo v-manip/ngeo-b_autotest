@@ -197,7 +197,7 @@ LOGGING = {
             'format': '%(levelname)s: %(message)s'
         },
         'verbose': {
-            'format': '[%(asctime)s][%(module)s][%(levelname)s]: %(message)s'
+            'format': '[%(asctime)s][%(module)s] %(levelname)s: %(message)s'
         }
     },
     'handlers': {
