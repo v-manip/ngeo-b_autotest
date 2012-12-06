@@ -56,7 +56,7 @@ DATABASES = {
     },
     'mapcache': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'autotest/data/mapcache.sqlite',
+        'NAME': '/var/ngeob_data/mapcache.sqlite',
     }
 }
 
@@ -197,7 +197,7 @@ LOGGING = {
             'format': '%(levelname)s: %(message)s'
         },
         'verbose': {
-            'format': '[%(asctime)s][%(module)s][%(levelname)s]: %(message)s'
+            'format': '[%(asctime)s][%(module)s] %(levelname)s: %(message)s'
         }
     },
     'handlers': {
