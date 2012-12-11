@@ -2,12 +2,12 @@
 <rep:browseReport xmlns:bsi="http://ngeo.eo.esa.int/schema/browse/ingestion" xmlns:eop="http://earth.esa.int/eop" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:gml="http://www.opengis.net/gml" xmlns:gsc="http://earth.esa.int/gsc" xmlns:opt="http://earth.esa.int/opt" xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xdt="http://www.w3.org/2005/02/xpath-datatypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.1">
 	<rep:responsibleOrgName>Sentinel 1 PDGS</rep:responsibleOrgName>
 	<rep:dateTime>2012-11-08T17:25:49+01:00</rep:dateTime>
-	<rep:browseType>S1A_GRD</rep:browseType>
+	<rep:browseType>SAR</rep:browseType>
 	<rep:browse>
-		<rep:browseIdentifier>20120101T043724405923</rep:browseIdentifier>
+		<rep:browseIdentifier>a20120101T043724405923</rep:browseIdentifier>
 		<rep:fileName>quick-look.png</rep:fileName>
 		<rep:imageType>PNG</rep:imageType>
-		<rep:referenceSystemIdentifier>RAW</rep:referenceSystemIdentifier>
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
 		<rep:regularGrid>
 			<rep:colNodeNumber>6</rep:colNodeNumber>
 			<rep:rowNodeNumber>20</rep:rowNodeNumber>
