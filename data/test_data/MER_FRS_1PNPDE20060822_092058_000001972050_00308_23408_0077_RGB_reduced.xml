@@ -2,7 +2,7 @@
 <rep:browseReport xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport http://ngeo.eo.esa.int/schema/browseReport/browseReport.xsd" version="1.1">
     <rep:responsibleOrgName>EOX</rep:responsibleOrgName>
     <rep:dateTime>2012-10-02T09:30:00Z</rep:dateTime>
-    <rep:browseType>OPTICAL</rep:browseType>
+    <rep:browseType>MER_FRS</rep:browseType>
     <rep:browse>
         <rep:browseIdentifier>MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced</rep:browseIdentifier>
         <rep:fileName>MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced.tif</rep:fileName>

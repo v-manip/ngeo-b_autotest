@@ -2,7 +2,7 @@
 <rep:browseReport xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport http://ngeo.eo.esa.int/schema/browseReport/browseReport.xsd" version="1.1">
     <rep:responsibleOrgName>EOX</rep:responsibleOrgName>
     <rep:dateTime>2012-10-02T09:30:00Z</rep:dateTime>
-    <rep:browseType>SAR</rep:browseType>
+    <rep:browseType>ASA_WSM</rep:browseType>
     <rep:browse>
         <rep:browseIdentifier>ASAR</rep:browseIdentifier>
         <rep:fileName>ASA_WSM_1PNDPA20050331_075939_000000552036_00035_16121_0775.tif</rep:fileName>
@@ -17,9 +17,9 @@
                  the colStep is around (d-1)/(a-1) and
                  the rowStep around (c-1)/(b-1) -->
             <!-- Image is 569x486 pixel => colStep = (486-1)/(10-1); rowStep = (569-1)/(11-1) -->
-            <!-- Incremental step on column axis from node to node. -->
+            <!-- Incremental step in pixels on column axis from node to node. -->
             <rep:colStep>53.888888889</rep:colStep>
-            <!-- Incremental step on row axis from node to node. -->
+            <!-- Incremental step in pixels on row axis from node to node. -->
             <rep:rowStep>56.8</rep:rowStep>
             <!-- List of double pairs separated by space providing, for one
                  node of one line of the grid, its x/y or lat/lon coordinates.
