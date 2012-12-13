@@ -13,7 +13,7 @@
             <rep:colNodeNumber>10</rep:colNodeNumber>
             <!-- Number of regularly spaced nodes over the row or x axis. -->
             <rep:rowNodeNumber>11</rep:rowNodeNumber>
-            <!-- When the image size is c by d pixels then
+            <!-- When the image size is c (size in x) by d (size in y) pixels then
                  the colStep is around (d-1)/(a-1) and
                  the rowStep around (c-1)/(b-1) -->
             <!-- Image is 569x486 pixel => colStep = (486-1)/(10-1); rowStep = (569-1)/(11-1) -->
