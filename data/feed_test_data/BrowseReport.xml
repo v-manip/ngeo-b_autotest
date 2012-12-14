@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rep:browseReport xmlns:bsi="http://ngeo.eo.esa.int/schema/browse/ingestion" xmlns:eop="http://earth.esa.int/eop" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:gml="http://www.opengis.net/gml" xmlns:gsc="http://earth.esa.int/gsc" xmlns:opt="http://earth.esa.int/opt" xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xdt="http://www.w3.org/2005/02/xpath-datatypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.1">
+<bsi:ingestBrowse xmlns:bsi="http://ngeo.eo.esa.int/schema/browse/ingestion" xmlns:eop="http://earth.esa.int/eop" xmlns:gsc="http://earth.esa.int/gsc" xmlns:opt="http://earth.esa.int/opt" xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport http://ngeo.eo.esa.int/schema/browseReport/browseReport.xsd" version="1.1">
 	<rep:responsibleOrgName>Sentinel 1 PDGS</rep:responsibleOrgName>
 	<rep:dateTime>2012-11-08T17:25:49+01:00</rep:dateTime>
 	<rep:browseType>SAR</rep:browseType>
@@ -37,4 +37,4 @@
 		<rep:startTime>2012-01-01T04:37:24.405923</rep:startTime>
 		<rep:endTime>2012-01-01T04:37:32.890783</rep:endTime>
 	</rep:browse>
-</rep:browseReport>
+</bsi:ingestBrowse>
