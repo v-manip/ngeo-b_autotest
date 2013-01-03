@@ -30,7 +30,7 @@
 
 # About:
 # =====
-# This script loads demo data in an ngEO Browse Server instance.
+# This script loads demo configuration in an ngEO Browse Server instance.
 
 # Running:
 # =======
