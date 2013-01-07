@@ -270,6 +270,9 @@ EOF
 EOF
 fi
 
+# Reload Apache
+service httpd graceful
+
 cat <<EOF
 
 ################################################################################
