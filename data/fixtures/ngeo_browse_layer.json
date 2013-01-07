@@ -112,5 +112,24 @@
             "lowest_map_level": 0, 
             "highest_map_level": 8
         }
+    }, 
+    {
+        "pk": "TEST_GOOGLE_MERCATOR", 
+        "model": "config.browselayer", 
+        "fields": {
+            "browse_type": "GOOGLE_MERCATOR", 
+            "title": "TESTTITLE_GOOGLE_MERCATOR", 
+            "description": "", 
+            "browse_access_policy": "OPEN", 
+            "contains_vertical_curtains": false, 
+            "r_band": null, 
+            "g_band": null, 
+            "b_band": null, 
+            "radiometric_interval_min": null, 
+            "radiometric_interval_max": null, 
+            "grid": "urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible", 
+            "lowest_map_level": 0, 
+            "highest_map_level": 8
+        }
     }
 ]
