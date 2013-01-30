@@ -43,7 +43,7 @@
 
 url=$1
 
-[ "$1" ]] || url="http://localhost:3080"
+[ "$1" ] || url="http://localhost:3080"
 
 echo "Sending browse reports to: $url"
 
