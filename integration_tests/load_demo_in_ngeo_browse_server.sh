@@ -92,9 +92,9 @@ if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; 
         <cache>TEST_SAR</cache>
         <grid>WGS84</grid>
         <format>mixed</format>
-        <metatile>2 2</metatile>
-        <metabuffer>10</metabuffer>
+        <metatile>8 8</metatile>
         <expires>3600</expires>
+        <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
             <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&gt;=datetime(:start_timestamp,'unixepoch') and end_time&lt;=datetime(:end_timestamp,'unixepoch') order by end_time</query>
@@ -105,9 +105,9 @@ if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; 
         <cache>TEST_OPTICAL</cache>
         <grid>WGS84</grid>
         <format>mixed</format>
-        <metatile>2 2</metatile>
-        <metabuffer>10</metabuffer>
+        <metatile>8 8</metatile>
         <expires>3600</expires>
+        <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
             <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&gt;=datetime(:start_timestamp,'unixepoch') and end_time&lt;=datetime(:end_timestamp,'unixepoch') order by end_time</query>
@@ -118,9 +118,9 @@ if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; 
         <cache>TEST_ASA_WSM</cache>
         <grid>WGS84</grid>
         <format>mixed</format>
-        <metatile>2 2</metatile>
-        <metabuffer>10</metabuffer>
+        <metatile>8 8</metatile>
         <expires>3600</expires>
+        <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
             <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&gt;=datetime(:start_timestamp,'unixepoch') and end_time&lt;=datetime(:end_timestamp,'unixepoch') order by end_time</query>
@@ -131,9 +131,9 @@ if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; 
         <cache>TEST_MER_FRS</cache>
         <grid>WGS84</grid>
         <format>mixed</format>
-        <metatile>2 2</metatile>
-        <metabuffer>10</metabuffer>
+        <metatile>8 8</metatile>
         <expires>3600</expires>
+        <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
             <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&gt;=datetime(:start_timestamp,'unixepoch') and end_time&lt;=datetime(:end_timestamp,'unixepoch') order by end_time</query>
@@ -214,9 +214,9 @@ EOF
         <cache>TEST_SAR</cache>
         <grid>WGS84</grid>
         <format>mixed</format>
-        <metatile>2 2</metatile>
-        <metabuffer>10</metabuffer>
+        <metatile>8 8</metatile>
         <expires>3600</expires>
+        <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
             <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&gt;=datetime(:start_timestamp,'unixepoch') and end_time&lt;=datetime(:end_timestamp,'unixepoch') order by end_time</query>
@@ -228,9 +228,9 @@ EOF
         <cache>TEST_OPTICAL</cache>
         <grid>WGS84</grid>
         <format>mixed</format>
-        <metatile>2 2</metatile>
-        <metabuffer>10</metabuffer>
+        <metatile>8 8</metatile>
         <expires>3600</expires>
+        <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
             <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&gt;=datetime(:start_timestamp,'unixepoch') and end_time&lt;=datetime(:end_timestamp,'unixepoch') order by end_time</query>
@@ -242,9 +242,9 @@ EOF
         <cache>TEST_ASA_WSM</cache>
         <grid>WGS84</grid>
         <format>mixed</format>
-        <metatile>2 2</metatile>
-        <metabuffer>10</metabuffer>
+        <metatile>8 8</metatile>
         <expires>3600</expires>
+        <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
             <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&gt;=datetime(:start_timestamp,'unixepoch') and end_time&lt;=datetime(:end_timestamp,'unixepoch') order by end_time</query>
@@ -256,9 +256,9 @@ EOF
         <cache>TEST_MER_FRS</cache>
         <grid>WGS84</grid>
         <format>mixed</format>
-        <metatile>2 2</metatile>
-        <metabuffer>10</metabuffer>
+        <metatile>8 8</metatile>
         <expires>3600</expires>
+        <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
             <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&gt;=datetime(:start_timestamp,'unixepoch') and end_time&lt;=datetime(:end_timestamp,'unixepoch') order by end_time</query>
