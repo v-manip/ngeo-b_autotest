@@ -197,7 +197,7 @@ EOF
 fi
 
 # Reload Apache
-service httpd graceful
+service httpd reload
 
 cat <<EOF
 
