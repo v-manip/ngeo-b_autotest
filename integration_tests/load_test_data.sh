@@ -35,7 +35,7 @@
 
 # Running:
 # =======
-# sudo ./load_test_data.sh [URL]
+# ./load_test_data.sh [URL]
 
 ################################################################################
 # Usually there should be no need to change anything below.                    #
