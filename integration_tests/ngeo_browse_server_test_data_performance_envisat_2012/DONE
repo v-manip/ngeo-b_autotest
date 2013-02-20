@@ -1,0 +1,55 @@
+# In EOLI-SA search in ENVISAT - Complete 2012
+
+# ASAR Wide Swath (5966)
+mkdir ASAR_WS_Browse_Images
+mkdir ASAR_WS_Browse_Reports
+python download-eoli-browse.py --browse-report ASAR_WS_Browse_Reports/ASAR_WS_Browse_Report_201204-06 --skip-existing --browse-type ASAR_WS --pretty-print --browses-per-report 10 eoli_ASAR_WS_201204-06.csv ASAR_WS_Browse_Images
+python download-eoli-browse.py --browse-report ASAR_WS_Browse_Reports/ASAR_WS_Browse_Report_201203 --skip-existing --browse-type ASAR_WS --pretty-print --browses-per-report 10 eoli_ASAR_WS_201203.csv ASAR_WS_Browse_Images
+python download-eoli-browse.py --browse-report ASAR_WS_Browse_Reports/ASAR_WS_Browse_Report_201202 --skip-existing --browse-type ASAR_WS --pretty-print --browses-per-report 10 eoli_ASAR_WS_201202.csv ASAR_WS_Browse_Images
+python download-eoli-browse.py --browse-report ASAR_WS_Browse_Reports/ASAR_WS_Browse_Report_201201 --skip-existing --browse-type ASAR_WS --pretty-print --browses-per-report 10 eoli_ASAR_WS_201201.csv ASAR_WS_Browse_Images
+
+# ASAR Alternating Polarization (395+433+57)
+mkdir ASAR_APC_Browse_Images
+mkdir ASAR_APC_Browse_Reports
+python download-eoli-browse.py --browse-report ASAR_APC_Browse_Reports/ASAR_APC_Browse_Report_201201-06 --skip-existing --browse-type ASAR_APC --pretty-print --browses-per-report 10 eoli_ASAR_APC_201201-06.csv ASAR_APC_Browse_Images
+
+# ASAR Image Mode (1412)
+mkdir ASAR_IM_Browse_Images
+mkdir ASAR_IM_Browse_Reports
+python download-eoli-browse.py --browse-report ASAR_IM_Browse_Reports/ASAR_IM_Browse_Report_201201-06 --skip-existing --browse-type ASAR_IM --pretty-print --browses-per-report 10 eoli_ASAR_IM_201201-06.csv ASAR_IM_Browse_Images
+
+# ASAR Global Monitoring (7283)
+mkdir ASAR_GM_Browse_Images
+mkdir ASAR_GM_Browse_Reports
+python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports/ASAR_GM_Browse_Report_201204-06 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 10 eoli_ASAR_GM_201204-06.csv ASAR_GM_Browse_Images
+python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports/ASAR_GM_Browse_Report_201203 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 10 eoli_ASAR_GM_201203.csv ASAR_GM_Browse_Images
+python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports/ASAR_GM_Browse_Report_201202 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 10 eoli_ASAR_GM_201202.csv ASAR_GM_Browse_Images
+python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports/ASAR_GM_Browse_Report_201201 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 10 eoli_ASAR_GM_201201.csv ASAR_GM_Browse_Images
+
+# ASAR Wave Mode
+# No products in 2012
+
+# MERIS Reduced Resolution (2242)
+mkdir MERIS_RR_Browse_Images
+mkdir MERIS_RR_Browse_Reports
+python download-eoli-browse.py --browse-report MERIS_RR_Browse_Reports/MERIS_RR_Browse_Report_2012 --skip-existing --browse-type MERIS_RR --pretty-print --browses-per-report 10 eoli_MERIS_RR_2012.csv MERIS_RR_Browse_Images
+
+# MERIS Full Resolution (2449)
+mkdir MERIS_FR_Browse_Images
+mkdir MERIS_FR_Browse_Reports
+python download-eoli-browse.py --browse-report MERIS_FR_Browse_Reports/MERIS_FR_Browse_Report_2012 --skip-existing --browse-type MERIS_FR --pretty-print --browses-per-report 10 eoli_MERIS_FR_2012.csv MERIS_FR_Browse_Images
+
+# AATRS (4319)
+mkdir AATRS_Browse_Images
+mkdir AATRS_Browse_Reports
+python download-eoli-browse.py --browse-report AATRS_Browse_Reports/AATRS_Browse_Report_201203-06 --skip-existing --browse-type AATRS --pretty-print --browses-per-report 10 eoli_AATSR_201203-06.csv AATRS_Browse_Images
+python download-eoli-browse.py --browse-report AATRS_Browse_Reports/AATRS_Browse_Report_201201-02 --skip-existing --browse-type AATRS --pretty-print --browses-per-report 10 eoli_AATSR_201201-02.csv AATRS_Browse_Images
+
+
+ls -l AATRS_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > AATRS_Browse_Reports.csv
+ls -l ASAR_WS_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > ASAR_WS_Browse_Reports.csv
+ls -l ASAR_APC_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > ASAR_APC_Browse_Reports.csv
+ls -l ASAR_IM_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > ASAR_IM_Browse_Reports.csv
+ls -l ASAR_GM_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > ASAR_GM_Browse_Reports.csv
+ls -l MERIS_RR_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > MERIS_RR_Browse_Reports.csv
+ls -l MERIS_FR_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > MERIS_FR_Browse_Reports.csv
