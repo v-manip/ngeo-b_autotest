@@ -30,7 +30,7 @@
 
 # About:
 # =====
-# This script loads performance demo configuration in an ngEO Browse Server 
+# This script loads the performance demo configuration in an ngEO Browse Server 
 # instance.
 
 # Running:
@@ -252,7 +252,7 @@ python manage.py eoxs_add_dataset_series --id MERIS_FR
 
 
 # Add browse laysers in MapCache
-echo "Adding browse laysers in MapCache."
+echo "Adding browse layers in MapCache."
 cd "$MAPCACHE_DIR"
 if ! grep -Fxq "    <cache name=\"AATRS\" type=\"sqlite3\">" $MAPCACHE_CONF ; then
     sed -e "/^<\/mapcache>$/d" -i $MAPCACHE_CONF
@@ -465,7 +465,7 @@ cat <<EOF
 ################################################################################
 
 # Obtain performance test browse reports and browse images and run performance
-# tests via JMeter..
+# tests via JMeter.
 
 # Alternatively run the following manually.
 # Upload browse images using WebDAV:

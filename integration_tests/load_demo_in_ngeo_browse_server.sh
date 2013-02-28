@@ -65,7 +65,7 @@ python manage.py loaddata --database=mapcache ngeo_mapcache.json
 
 
 # Add browse laysers in MapCache
-echo "Adding browse laysers in MapCache."
+echo "Adding browse layers in MapCache."
 cd "$MAPCACHE_DIR"
 if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; then
     sed -e "/^<\/mapcache>$/d" -i $MAPCACHE_CONF
