@@ -4,7 +4,7 @@
     <rep:dateTime>2012-10-02T09:30:00Z</rep:dateTime>
     <rep:browseType>GOOGLE_MERCATOR</rep:browseType>
     <rep:browse>
-        <rep:browseIdentifier>MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced</rep:browseIdentifier>
+        <rep:browseIdentifier>MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced_MERCATOR</rep:browseIdentifier>
         <rep:fileName>MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced.tif</rep:fileName>
         <rep:imageType>TIFF</rep:imageType>
         <rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
