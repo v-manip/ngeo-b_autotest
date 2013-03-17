@@ -85,3 +85,11 @@ curl -d @../data/test_data/MER_FRS_1PNPDE20060822_092058_000001972050_00308_2340
 curl -d @../data/aiv_test_data/BrowseReport.xml "$url"/browse/ingest
 
 curl -d @../data/feed_test_data/BrowseReport.xml "$url"/browse/ingest
+
+# Add configuration to MapCache before execution of the below ingestions.
+#curl --digest -u test:eiNoo7ae -T ../data/test_data/MER_FRS_1PNPDE20060816_090929_000001972050_00222_23322_0058_uint16_reduced_compressed.tif "$url"/store/
+#curl -d @../data/test_data/MER_FRS_1PNPDE20060816_090929_000001972050_00222_23322_0058_uint16_reduced_compressed_NO_BANDS.xml "$url"/browse/ingest
+#curl --digest -u test:eiNoo7ae -T ../data/test_data/MER_FRS_1PNPDE20060816_090929_000001972050_00222_23322_0058_uint16_reduced_compressed.tif "$url"/store/
+#curl -d @../data/test_data/MER_FRS_1PNPDE20060816_090929_000001972050_00222_23322_0058_uint16_reduced_compressed.xml "$url"/browse/ingest
+#curl --digest -u test:eiNoo7ae -T ../data/test_data/MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced.tif "$url"/store/
+#curl -d @../data/test_data/MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced_GOOGLE_MERCATOR.xml "$url"/browse/ingest
