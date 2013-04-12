@@ -1,0 +1,34 @@
+# on the reference platform:
+# 3 participants: - kalyke (holds extracted files)
+#                 - image2012 (target host for browse server)
+#                 - localhost (executes tests)
+
+
+### On kalyke
+
+# create registry on kalyke
+python create_registry.py /media/image2012/data/DWH_MG2_CORE_01_extract/ registry.csv
+
+# split registry in registry_xml.csv and registry_brs.csv (for easy tar-file creation)
+... # was a simple python script
+
+# create one tar with browse metadata and one with browse images and move them to localhost/image2012 respectively
+
+tar -cf metadata.tar -T registry_xml.csv
+tar -cf browses.tar -T registry_brs.csv
+
+scp browses.tar user@5.9.173.42:/media/data
+...
+
+### On image2012
+
+# unpack tar archive and flatten directory structure
+tar xvf /media/data/browses.tar -C /media/data/image2012/tmp
+find /media/data/image2012/tmp -type f -exec mv -i -f {} /media/data/image2012/storage \;
+
+
+### On localhost
+
+# unpack metadata.tar and create browsereports
+tar xvf metadata.tar
+python image2012_create_browse_reports.py registry.csv browsereports/ jmeter.csv
