@@ -16,6 +16,7 @@ from ngeo_browse_server.config.browsereport.serialization import (
 )
 
 
+# XML schema and namespace declarations
 gsc_nsmap = dict(
     gsc="http://earth.esa.int/gsc", opt="http://earth.esa.int/opt",
     eop="http://earth.esa.int/eop", xlink="http://www.w3.org/1999/xlink",
@@ -50,6 +51,7 @@ EXT_TO_IMAGE_TYPE = {
 
 
 def main(args):
+    # setup argument parser
     parser = ArgumentParser()
     parser.add_argument("--pretty-print", "-p", dest="pretty_print",
                         action="store_true", default=False)
@@ -59,27 +61,36 @@ def main(args):
     
     parsed_args = parser.parse_args(args)
 
+    # get arguments
     pretty_print = parsed_args.pretty_print
-    input_xml_filename = parsed_args.input_xml[0]
-    input_image_filename = parsed_args.input_image[0]
+    xml_filename = parsed_args.input_xml[0]
+    image_filename = parsed_args.input_image[0]
     output_filename = parsed_args.output[0]
-    
-    doc = etree.parse(input_xml_filename)
+
+    handle_file(xml_filename, image_filename, output_filename, pretty_print)
+
+
+def handle_file(xml_filename, image_filename, output_filename, pretty_print):
+    # parse and decode input GSC file
+    doc = etree.parse(xml_filename)
     decoded = gsc_report_decoder(doc)
 
+    # prepare and initialize browse report and browse
     def _prepare_browse(decoded_browse):
-        _, ext = splitext(input_image_filename)
+        _, ext = splitext(image_filename)
         decoded_browse["image_type"] = EXT_TO_IMAGE_TYPE[ext]
-        decoded_browse["file_name"] = input_image_filename
+        decoded_browse["file_name"] = image_filename
         
         return ModelInGeotiffBrowse(**decoded_browse)
+    
     decoded["browses"] = map(_prepare_browse, decoded["browses"])
 
     browse_report = BrowseReport(**decoded)
-    
+
+    # serialize the report to the file
     with open(output_filename, "w+") as f:
         serialize_browse_report(browse_report, f, pretty_print=pretty_print)
-
+    
 
 if __name__ == "__main__":
     main(sys.argv[1:])
