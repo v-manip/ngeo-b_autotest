@@ -15,7 +15,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="browses_path" elementType="Argument">
             <stringProp name="Argument.name">browses_path</stringProp>
-            <stringProp name="Argument.value">./path-to-browse_reports</stringProp>
+            <stringProp name="Argument.value">./image2012/browse_reports/</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="results_path" elementType="Argument">
@@ -25,22 +25,22 @@
           </elementProp>
           <elementProp name="iterations" elementType="Argument">
             <stringProp name="Argument.name">iterations</stringProp>
-            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.value">18525</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="server" elementType="Argument">
             <stringProp name="Argument.name">server</stringProp>
-            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.value">5.9.173.34</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="port" elementType="Argument">
             <stringProp name="Argument.name">port</stringProp>
-            <stringProp name="Argument.value">3080</stringProp>
+            <stringProp name="Argument.value">80</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="csvfile_path" elementType="Argument">
             <stringProp name="Argument.name">csvfile_path</stringProp>
-            <stringProp name="Argument.value">./path-to-csvfile</stringProp>
+            <stringProp name="Argument.value">./image2012/browse_reports.csv</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
