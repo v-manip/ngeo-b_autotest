@@ -22,7 +22,7 @@ def main(args):
             try:
                 browsereport = join(out_dir, basename(xml_filename))
                 handle_file(xml_filename, basename(image_filename), browsereport, False)
-                jmeter_file.write(browsereport + "\n")
+                jmeter_file.write(basename(xml_filename) + "\n")
             except Exception, e:
                 print "Error: %s" % str(e)
                 count_failure += 1

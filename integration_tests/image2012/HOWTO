@@ -1,3 +1,70 @@
+########################################################################
+# How to run the IMAGE2012 performance test                            #
+########################################################################
+
+# launch new instance in OpenStack (at least medium) and assign IP address
+
+cd ..../git/deliverables/developments/
+scp install_ngeo_browse_server.sh ngeo_browse_server/autotest/integration_tests/load_demo_in_ngeo_browse_server.sh ngeo_browse_server/autotest/integration_tests/add_browse_layers.sh ngeo_browse_server/autotest/integration_tests/image2012/image2012_layers.cfg root@<IP>:
+ssh root@<IP>
+
+# enable ephemeral disk and mount to /var/www/
+fdisk /dev/vdb
+n
+p
+1
+<enter>
+<enter>
+w
+mkfs.ext4 /dev/vdb1 
+cd /var
+mv www www2
+mkdir www
+mount /dev/vdb1 /var/www
+mv www2/* www
+rmdir www2
+
+vi install_ngeo_browse_server.sh
+#NGEOB_URL="http://<IP>"
+
+cd
+./install_ngeo_browse_server.sh
+
+vi /var/www/ngeo/ngeo_browse_server_instance/ngeo_browse_server_instance/settings.py
+#DEBUG = False
+#'level': 'INFO', #2x
+vi /var/www/ngeo/ngeo_browse_server_instance/ngeo_browse_server_instance/conf/eoxserver.conf
+#logging_level=INFO
+
+service httpd restart
+
+# store image2012 browse images
+mkdir /var/www/image2012/
+cd /var/www/image2012/
+scp 192.168.100.14:/media/data/browses.tar .
+# unpack tar archive and flatten directory structure
+mkdir tmp/
+tar xf browses.tar -C tmp
+find tmp -type f -exec mv -i {} /var/www/ngeo/store/ \;
+rm -rf tmp/
+
+cd
+# add browse layers
+./add_browse_layers.sh image2012_layers.cfg
+
+
+
+### On localhost
+cd ..../git/deliverables/developments/ngeo_browse_server/autotest/integration_tests
+jmeter &
+# load, adjust, and run performance_ingest_image2012.jmx
+
+
+
+########################################################################
+# How to prepare the IMAGE2012 performance test data                   #
+########################################################################
+
 # on the reference platform:
 # 3 participants: - kalyke (holds extracted files)
 #                 - image2012 (target host for browse server)
@@ -20,15 +87,10 @@ tar -cf browses.tar -T registry_brs.csv
 scp browses.tar user@5.9.173.42:/media/data
 ...
 
-### On image2012
-
-# unpack tar archive and flatten directory structure
-tar xvf /media/data/browses.tar -C /media/data/image2012/tmp
-find /media/data/image2012/tmp -type f -exec mv -i -f {} /media/data/image2012/storage \;
-
 
 ### On localhost
 
+scp kalyke:/media/data/metadata.tar .
 # unpack metadata.tar and create browsereports
 tar xvf metadata.tar
-python image2012_create_browse_reports.py registry.csv browsereports/ jmeter.csv
+python image2012_create_browse_reports.py registry.csv browse_reports/ browse_reports.csv
