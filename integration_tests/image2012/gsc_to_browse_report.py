@@ -77,9 +77,12 @@ def handle_file(xml_filename, image_filename, output_filename, pretty_print):
 
     # prepare and initialize browse report and browse
     def _prepare_browse(decoded_browse):
-        _, ext = splitext(image_filename)
+        base, ext = splitext(image_filename)
         decoded_browse["image_type"] = EXT_TO_IMAGE_TYPE[ext]
         decoded_browse["file_name"] = image_filename
+
+        if "browse_identifier" not in decoded_browse:
+            decoded_browse["browse_identifier"] = base
         
         return ModelInGeotiffBrowse(**decoded_browse)
     
