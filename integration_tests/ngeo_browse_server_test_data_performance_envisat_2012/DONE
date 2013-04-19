@@ -26,6 +26,13 @@ python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports/ASAR_GM_Br
 python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports/ASAR_GM_Browse_Report_201202 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 10 eoli_ASAR_GM_201202.csv ASAR_GM_Browse_Images
 python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports/ASAR_GM_Browse_Report_201201 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 10 eoli_ASAR_GM_201201.csv ASAR_GM_Browse_Images
 
+# one by one
+python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports_onebyone/ASAR_GM_Browse_Report_201204-06 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 1 eoli_result_csvs/eoli_ASAR_GM_201204-06.csv ASAR_GM_Browse_Images
+python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports_onebyone/ASAR_GM_Browse_Report_201203 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 1 eoli_result_csvs/eoli_ASAR_GM_201203.csv ASAR_GM_Browse_Images
+python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports_onebyone/ASAR_GM_Browse_Report_201202 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 1 eoli_result_csvs/eoli_ASAR_GM_201202.csv ASAR_GM_Browse_Images
+python download-eoli-browse.py --browse-report ASAR_GM_Browse_Reports_onebyone/ASAR_GM_Browse_Report_201201 --skip-existing --browse-type ASAR_GM --pretty-print --browses-per-report 1 eoli_result_csvs/eoli_ASAR_GM_201201.csv ASAR_GM_Browse_Images
+
+
 # ASAR Wave Mode
 # No products in 2012
 
@@ -51,5 +58,6 @@ ls -l ASAR_WS_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > ASAR_WS_Brow
 ls -l ASAR_APC_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > ASAR_APC_Browse_Reports.csv
 ls -l ASAR_IM_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > ASAR_IM_Browse_Reports.csv
 ls -l ASAR_GM_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > ASAR_GM_Browse_Reports.csv
+ls -l ASAR_GM_Browse_Reports_onebyone/ | sed 's/^.* //' | sed '/^[0-9]*$/d' > ASAR_GM_Browse_Reports_onebyone.csv
 ls -l MERIS_RR_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > MERIS_RR_Browse_Reports.csv
 ls -l MERIS_FR_Browse_Reports | sed 's/^.* //' | sed '/^[0-9]*$/d' > MERIS_FR_Browse_Reports.csv
