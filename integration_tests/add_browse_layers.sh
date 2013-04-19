@@ -130,6 +130,7 @@ EOF
 
     <cache name="$LAYER_NAME" type="sqlite3">
         <dbfile>$MAPCACHE_DIR/$LAYER_NAME.sqlite</dbfile>
+        <detect_blank>true</detect_blank>
     </cache>
     <source name="$LAYER_NAME" type="wms">
         <getmap>
@@ -145,7 +146,7 @@ EOF
     <tileset name="$LAYER_NAME">
         <source>$LAYER_NAME</source>
         <cache>$LAYER_NAME</cache>
-        <grid>WGS84</grid>
+        <grid max-cached-zoom="$HIGHEST_MAP_LEVEL" out-of-zoom-strategy="reassemble">WGS84</grid>
         <format>mixed</format>
         <metatile>8 8</metatile>
         <expires>3600</expires>

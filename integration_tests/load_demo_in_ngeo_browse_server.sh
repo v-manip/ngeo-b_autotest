@@ -73,18 +73,22 @@ if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; 
 
     <cache name="TEST_SAR" type="sqlite3">
         <dbfile>$MAPCACHE_DIR/TEST_SAR.sqlite</dbfile>
+        <detect_blank>true</detect_blank>
     </cache>
 
     <cache name="TEST_OPTICAL" type="sqlite3">
         <dbfile>$MAPCACHE_DIR/TEST_OPTICAL.sqlite</dbfile>
+        <detect_blank>true</detect_blank>
     </cache>
 
     <cache name="TEST_ASA_WSM" type="sqlite3">
         <dbfile>$MAPCACHE_DIR/TEST_ASA_WSM.sqlite</dbfile>
+        <detect_blank>true</detect_blank>
     </cache>
 
     <cache name="TEST_MER_FRS" type="sqlite3">
         <dbfile>$MAPCACHE_DIR/TEST_MER_FRS.sqlite</dbfile>
+        <detect_blank>true</detect_blank>
     </cache>
 
     <source name="TEST_SAR" type="wms">
@@ -138,7 +142,7 @@ if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; 
     <tileset name="TEST_SAR">
         <source>TEST_SAR</source>
         <cache>TEST_SAR</cache>
-        <grid>WGS84</grid>
+        <grid max-cached-zoom="4" out-of-zoom-strategy="reassemble">WGS84</grid>
         <format>mixed</format>
         <metatile>8 8</metatile>
         <expires>3600</expires>
@@ -152,7 +156,7 @@ if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; 
     <tileset name="TEST_OPTICAL">
         <source>TEST_OPTICAL</source>
         <cache>TEST_OPTICAL</cache>
-        <grid>WGS84</grid>
+        <grid max-cached-zoom="4" out-of-zoom-strategy="reassemble">WGS84</grid>
         <format>mixed</format>
         <metatile>8 8</metatile>
         <expires>3600</expires>
@@ -166,7 +170,7 @@ if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; 
     <tileset name="TEST_ASA_WSM">
         <source>TEST_ASA_WSM</source>
         <cache>TEST_ASA_WSM</cache>
-        <grid>WGS84</grid>
+        <grid max-cached-zoom="4" out-of-zoom-strategy="reassemble">WGS84</grid>
         <format>mixed</format>
         <metatile>8 8</metatile>
         <expires>3600</expires>
@@ -180,7 +184,7 @@ if ! grep -Fxq "    <service type=\"demo\" enabled=\"true\"/>" $MAPCACHE_CONF ; 
     <tileset name="TEST_MER_FRS">
         <source>TEST_MER_FRS</source>
         <cache>TEST_MER_FRS</cache>
-        <grid>WGS84</grid>
+        <grid max-cached-zoom="6" out-of-zoom-strategy="reassemble">WGS84</grid>
         <format>mixed</format>
         <metatile>8 8</metatile>
         <expires>3600</expires>
