@@ -93,3 +93,23 @@ scp kalyke:/media/data/metadata.tar .
 # unpack metadata.tar and create browsereports
 tar xvf metadata.tar
 python image2012_create_browse_reports.py registry.csv browse_reports/ browse_reports.csv
+
+
+
+########################################################################
+# How to prepare the IMAGE2012 performance test requests               #
+########################################################################
+
+sqlite3 mapcache.sqlite
+.output times
+select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time), strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id="MSI_IMG_3A" order by end_time;
+awk 'NR == 1 || NR % 140 == 0' times > t
+vi t
+:%s/^/select "/
+:%s/|/"; select z,y,x from tiles where tileset="MSI_IMG_3A" and grid="WGS84" and dim="/
+:%s/$/";/
+:wq
+#Run queries on big cache after running ".output levels.csv"
+
+vi levels.csv
+./gen_requests.py levels.csv browse_requests.csv
