@@ -75,6 +75,22 @@ do
     BROWSE_TYPE=$(echo $BROWSE_LAYER | cut -f2 -d " ")
     LOWEST_MAP_LEVEL=$(echo $BROWSE_LAYER | cut -f3 -d " ")
     HIGHEST_MAP_LEVEL=$(echo $BROWSE_LAYER | cut -f4 -d " ")
+    GRID=$(echo $BROWSE_LAYER | cut -f5 -d " ")
+    if [ "$GRID" = "3857" ]; then 
+        GRID="urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible"
+    else
+        GRID="urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad"
+    fi
+    R_BAND=$(echo $BROWSE_LAYER | cut -f6 -d " ")
+    if [ -z "$R_BAND" ]; then R_BAND="null"; fi
+    G_BAND=$(echo $BROWSE_LAYER | cut -f7 -d " ")
+    if [ -z "$G_BAND" ]; then G_BAND="null"; fi
+    B_BAND=$(echo $BROWSE_LAYER | cut -f8 -d " ")
+    if [ -z "$B_BAND" ]; then B_BAND="null"; fi
+    RADIOMETRIC_INTERVAL_MIN=$(echo $BROWSE_LAYER | cut -f9 -d " ")
+    if [ -z "$RADIOMETRIC_INTERVAL_MIN" ]; then RADIOMETRIC_INTERVAL_MIN="null"; fi
+    RADIOMETRIC_INTERVAL_MAX=$(echo $BROWSE_LAYER | cut -f10 -d " ")
+    if [ -z "$RADIOMETRIC_INTERVAL_MAX" ]; then RADIOMETRIC_INTERVAL_MAX="null"; fi
     echo "    Adding browse layer '$LAYER_NAME' for browse type '$BROWSE_TYPE'."
 
     # Add in Django apps
@@ -82,7 +98,7 @@ do
     python manage.py eoxs_check_id -a $BROWSE_TYPE
     if [ $? -eq 0 ]; then
         echo "         Adding in Django apps."
-        cat << EOF >> tmp_browse_layer.json
+        cat << EOF > tmp_browse_layer.json
 [
     {
         "pk": "$LAYER_NAME", 
@@ -93,19 +109,19 @@ do
             "description": "", 
             "browse_access_policy": "OPEN", 
             "contains_vertical_curtains": false, 
-            "r_band": null, 
-            "g_band": null, 
-            "b_band": null, 
-            "radiometric_interval_min": null, 
-            "radiometric_interval_max": null, 
-            "grid": "urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad", 
+            "r_band": $R_BAND, 
+            "g_band": $G_BAND, 
+            "b_band": $B_BAND, 
+            "radiometric_interval_min": $RADIOMETRIC_INTERVAL_MIN, 
+            "radiometric_interval_max": $RADIOMETRIC_INTERVAL_MAX, 
+            "grid": "$GRID", 
             "lowest_map_level": $LOWEST_MAP_LEVEL, 
             "highest_map_level": $HIGHEST_MAP_LEVEL
         }
     }
 ]
 EOF
-        cat << EOF >> tmp_mapcache.json
+        cat << EOF > tmp_mapcache.json
 [
     {
         "pk": "$LAYER_NAME", 
