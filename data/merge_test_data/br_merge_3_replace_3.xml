@@ -12,8 +12,8 @@
 			<rep:colRowList>0 0 494 0 494 861 0 861 0 0</rep:colRowList>
 			<rep:coordList>51.8 2.45 51.58 3.99 49.89 3.36 50.1 1.87 51.8 2.45</rep:coordList>
 		</rep:footprint>
-		<!-- a completely different time span -->
-		<rep:startTime>2010-07-22T21:46:38Z</rep:startTime>
-		<rep:endTime>2010-07-22T21:48:38Z</rep:endTime>
+		<!-- right before br_merge_1.xml -->
+		<rep:startTime>2010-07-22T21:36:40Z</rep:startTime>
+		<rep:endTime>2010-07-22T21:38:40Z</rep:endTime>
 	</rep:browse>
 </rep:browseReport>
