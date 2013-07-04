@@ -34,7 +34,18 @@
 #
 # Browse Layers are provided in a separate configuration file following this
 # structure:
-#<LAYER_NAME> <BROWSE_TYPE> <LOWEST_MAP_LEVEL> <HIGHEST_MAP_LEVEL>
+#<LAYER_NAME> <BROWSE_TYPE> <LOWEST_MAP_LEVEL> <HIGHEST_MAP_LEVEL> <grid> <r_band> <g_band> <b_band> <radiometric_interval_min> <radiometric_interval_max>
+#
+# Note that the first five parameters are mandatory while the second five are 
+# optional.
+#
+# Note that usually 0 is used for the <LOWEST_MAP_LEVEL>. Level 10 which is 
+# around 75m/px is a good candidate for <HIGHEST_MAP_LEVEL>.
+#
+# Choices for <grid> are either 3857 or 4326 corresponding to 
+# "urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible" or 
+# "urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad" respectively.
+#
 
 # Running:
 # =======
@@ -169,7 +180,7 @@ EOF
         <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
-            <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&lt;=datetime(:end_timestamp,'unixepoch') and end_time&gt;=datetime(:start_timestamp,'unixepoch') order by end_time limit 100</query>
+            <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&lt;=datetime(:end_timestamp,'unixepoch') and end_time&gt;=datetime(:start_timestamp,'unixepoch') and maxx&gt;=:minx and maxy&gt;=:miny and minx&lt;=:maxx and miny&lt;=:maxy order by end_time limit 100</query>
         </timedimension>
     </tileset>
 </mapcache>
