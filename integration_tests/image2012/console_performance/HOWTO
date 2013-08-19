@@ -1,0 +1,45 @@
+########################################################################
+# How to run the IMAGE2012 cosnole performance test                    #
+########################################################################
+
+
+Configuration of Server
+=======================
+TBD
+
+
+
+
+Running test
+============
+Tests can be run through the performance.py script in one sweep running in this order:
+* Ingest 
+* Export
+* Delete
+* Import
+or those steps can be run individually.
+
+In order to run the complete test various parameters have to be passed to the --test argument:
+1. path to CSV file containing browse Reports file names to be ingested
+2. path to actual browse Reports
+3. path to image data
+4. path to CSV file containing list of triplets (layerid, starttime, endtime) created by chunks.py script
+
+the --output argument needs one parameter:
+1. path where to save output
+
+Example comand for complete test:
+---------------------------------
+	python performance.py --test performance_test/browseReports.csv performance_test/browseReports/ /var/www/image2012/storage/ performance_test/chunks.csv export/ --output output/
+
+
+If debug outputs is wanted add --debug flag
+In order to pipe into document you can append the following to your test command
+	--debug > debug_output.log 2> debug_output.log
+
+
+Preparation of triplets CSV with chunks.py
+------------------------------------------
+
+The chunks script will be updated soon. It reads the browse reports of the specified path and orders them by time, dividing the timespan they define into time chunks containing the same amount of browses.
+
