@@ -38,8 +38,14 @@ In order to pipe into document you can append the following to your test command
 	--debug > debug_output.log 2> debug_output.log
 
 
-Preparation of triplets CSV with chunks.py
+Preparation of triplets CSV with create_chunks.py
 ------------------------------------------
 
-The chunks script will be updated soon. It reads the browse reports of the specified path and orders them by time, dividing the timespan they define into time chunks containing the same amount of browses.
+The chunks script takes a path to the browses and an outputfile for the csv file as arguments as well as an output argument where to save modified browse reports.
+The goes through all browses solves possible timespan overlaps and rewrites the new times to the outputted browse reports. It creates a csv file with triples (layerid, starttime , endtime). Assuring no overlap each timespan now can be associated with one browse report for export, delete and import methods.
+
+Example command for the create_chunks.py script
+-----------------------------------------------
+python create_chunks.py --create browseReports/ testTimes.csv --output test/
+
 
