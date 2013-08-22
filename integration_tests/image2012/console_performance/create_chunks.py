@@ -103,7 +103,7 @@ def createChunks(browsePath, outputfile, output):
 						browses[layers][j][2].getElementsByTagName('rep:endTime')[0].firstChild.replaceWholeText(out_end)
 
 						#Modify id of layer to avoid overwriting browses
-						browses[layers][j][2].getElementsByTagName('rep:browseIdentifier')[0].firstChild.replaceWholeText(str(uuid.uuid4()))
+						browses[layers][j][2].getElementsByTagName('rep:browseIdentifier')[0].firstChild.replaceWholeText("_"+str(uuid.uuid4()))
 
 						#write layerid start and end times of browse to the csv
 						f.write("%s,%s,%s\n"%(layers,out_start,out_end))
@@ -123,7 +123,7 @@ def createChunks(browsePath, outputfile, output):
 					browses[layers][i][2].getElementsByTagName('rep:endTime')[0].firstChild.replaceWholeText(out_end)
 
 					#Modify id of layer to avoid overwriting browses
-					browses[layers][i][2].getElementsByTagName('rep:browseIdentifier')[0].firstChild.replaceWholeText(str(uuid.uuid4()))
+					browses[layers][i][2].getElementsByTagName('rep:browseIdentifier')[0].firstChild.replaceWholeText("_"+str(uuid.uuid4()))
 
 					#write layerid start and end times of browse to the csv
 					f.write("%s,%s,%s\n"%(layers,out_start,out_end))
