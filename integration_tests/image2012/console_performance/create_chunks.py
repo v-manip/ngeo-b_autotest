@@ -4,6 +4,7 @@ import time
 import os
 from time import gmtime, strptime, strftime
 import itertools, collections
+import uuid
 
 import pdb
 
@@ -101,6 +102,9 @@ def createChunks(browsePath, outputfile, output):
 						browses[layers][j][2].getElementsByTagName('rep:startTime')[0].firstChild.replaceWholeText(out_start)
 						browses[layers][j][2].getElementsByTagName('rep:endTime')[0].firstChild.replaceWholeText(out_end)
 
+						#Modify id of layer to avoid overwriting browses
+						browses[layers][j][2].getElementsByTagName('rep:browseIdentifier')[0].firstChild.replaceWholeText(str(uuid.uuid4()))
+
 						#write layerid start and end times of browse to the csv
 						f.write("%s,%s,%s\n"%(layers,out_start,out_end))
 
@@ -117,6 +121,9 @@ def createChunks(browsePath, outputfile, output):
 					#Modify browse reports with new start end times
 					browses[layers][i][2].getElementsByTagName('rep:startTime')[0].firstChild.replaceWholeText(out_start)
 					browses[layers][i][2].getElementsByTagName('rep:endTime')[0].firstChild.replaceWholeText(out_end)
+
+					#Modify id of layer to avoid overwriting browses
+					browses[layers][i][2].getElementsByTagName('rep:browseIdentifier')[0].firstChild.replaceWholeText(str(uuid.uuid4()))
 
 					#write layerid start and end times of browse to the csv
 					f.write("%s,%s,%s\n"%(layers,out_start,out_end))
