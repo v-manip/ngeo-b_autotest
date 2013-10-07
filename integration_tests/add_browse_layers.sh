@@ -32,9 +32,11 @@
 # =====
 # This script adds Browse Layers in an ngEO Browse Server instance.
 #
-# Browse Layers are provided in a separate configuration file following this
-# structure:
+# Browse Layers are provided in a separate configuration file holding lines 
+# following this structure:
 #<LAYER_NAME> <BROWSE_TYPE> <LOWEST_MAP_LEVEL> <HIGHEST_MAP_LEVEL> <grid> <r_band> <g_band> <b_band> <radiometric_interval_min> <radiometric_interval_max>
+#
+# Make sure to use Unix line endings (LF) and not Windows ones (CRLF).
 #
 # Note that the first five parameters are mandatory while the second five are 
 # optional.
@@ -89,8 +91,10 @@ do
     GRID=$(echo $BROWSE_LAYER | cut -f5 -d " ")
     if [ "$GRID" = "3857" ]; then 
         GRID="urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible"
+        GRID_CACHE="GoogleMapsCompatible"
     else
         GRID="urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad"
+        GRID_CACHE="WGS84"
     fi
     R_BAND=$(echo $BROWSE_LAYER | cut -f6 -d " ")
     if [ -z "$R_BAND" ]; then R_BAND="null"; fi
@@ -173,14 +177,14 @@ EOF
     <tileset name="$LAYER_NAME">
         <source>$LAYER_NAME</source>
         <cache>$LAYER_NAME</cache>
-        <grid max-cached-zoom="$HIGHEST_MAP_LEVEL" out-of-zoom-strategy="reassemble">WGS84</grid>
+        <grid max-cached-zoom="$HIGHEST_MAP_LEVEL" out-of-zoom-strategy="reassemble">$GRID_CACHE</grid>
         <format>mixed</format>
         <metatile>8 8</metatile>
         <expires>3600</expires>
         <read-only>true</read-only>
         <timedimension type="sqlite" default="2010">
             <dbfile>$NGEOB_INSTALL_DIR/ngeo_browse_server_instance/ngeo_browse_server_instance/data/mapcache.sqlite</dbfile>
-            <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&lt;=datetime(:end_timestamp,'unixepoch') and end_time&gt;=datetime(:start_timestamp,'unixepoch') and maxx&gt;=:minx and maxy&gt;=:miny and minx&lt;=:maxx and miny&lt;=:maxy order by end_time limit 100</query>
+            <query>select strftime('%Y-%m-%dT%H:%M:%SZ',start_time)||'/'||strftime('%Y-%m-%dT%H:%M:%SZ',end_time) from time where source_id=:tileset and start_time&lt;=datetime(:end_timestamp,'unixepoch') and end_time&gt;=datetime(:start_timestamp,'unixepoch') and maxx&gt;=:minx and maxy&gt;=:miny and minx&lt;=:maxx and miny&lt;=:maxy order by end_time desc limit 100</query>
         </timedimension>
     </tileset>
 </mapcache>
