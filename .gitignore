@@ -1,0 +1,14 @@
+# Django
+/data/data.sqlite
+/data/mapcache.sqlite
+/static
+
+# EOxServer
+/logs/eoxserver.log
+/wcst_perm
+/wcst_temp
+
+# ngEO-B
+/logs/debug.log
+/logs/ngeo.log
+/results
