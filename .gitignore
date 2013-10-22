@@ -1,3 +1,6 @@
+# Python
+*.pyc
+
 # Django
 /data/data.sqlite
 /data/mapcache.sqlite
