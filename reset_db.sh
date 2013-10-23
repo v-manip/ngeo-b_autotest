@@ -37,24 +37,21 @@
 
 # Running:
 # =======
-# ./reset_db.sh
-# Passwords is vagrant
+# sudo ./reset_db.sh
 #
 ################################################################################
 
-sudo service httpd stop
+service httpd stop
 
 # Reset DB with PostgreSQL:
-dropdb ngeo
-rm -f /var/ngeob_data/mapcache.sqlite
-createdb -O vagrant -T template_postgis ngeo
+su postgres -c "dropdb ngeo_browse_server_db"
+rm -f /var/ngeob_autotest/data/mapcache.sqlite
+su postgres -c "createdb -O ngeo_user -T template_postgis ngeo_browse_server_db"
 cd /var/ngeob_autotest/
 python manage.py syncdb --noinput
 python manage.py syncdb --database=mapcache --noinput
 python manage.py loaddata auth_data.json ngeo_browse_layer.json eoxs_dataset_series.json initial_rangetypes.json
 python manage.py loaddata --database=mapcache ngeo_mapcache.json
-sudo chown apache:apache /var/ngeob_data/mapcache.sqlite
-sudo chmod a+w /var/ngeob_data/mapcache.sqlite
 
 ## Reset DB with Django:
 ## Note, schema changes are not applied.
@@ -65,24 +62,24 @@ sudo chmod a+w /var/ngeob_data/mapcache.sqlite
 #python manage.py loaddata --database=mapcache ngeo_mapcache.json
 
 # Reset ngEO Browse Server
-sudo rm -rf /var/ngeob_data/optimized/ /var/ngeob_data/success/ /var/ngeob_data/failure/ /var/ngeob_data/storage/
-sudo mkdir /var/ngeob_data/optimized/ /var/ngeob_data/success/ /var/ngeob_data/failure/ /var/ngeob_data/storage/
-sudo chown apache:apache /var/ngeob_data/optimized/ /var/ngeob_data/success/ /var/ngeob_data/failure/ /var/ngeob_data/storage/
-rm -f /var/ngeob_autotest/autotest/logs/eoxserver.log /var/ngeob_autotest/autotest/logs/ngeo.log
-touch /var/ngeob_autotest/autotest/logs/eoxserver.log /var/ngeob_autotest/autotest/logs/ngeo.log
-chmod go+w /var/ngeob_autotest/autotest/logs/eoxserver.log /var/ngeob_autotest/autotest/logs/ngeo.log
+rm -rf /var/ngeob_autotest/data/optimized/ /var/ngeob_autotest/data/success/ /var/ngeob_autotest/data/failure/ /var/www/store/
+mkdir /var/ngeob_autotest/data/optimized/ /var/ngeob_autotest/data/success/ /var/ngeob_autotest/data/failure/ /var/www/store/
+rm -f /var/ngeob_autotest/logs/eoxserver.log /var/ngeob_autotest/logs/ngeo.log
+touch /var/ngeob_autotest/logs/eoxserver.log /var/ngeob_autotest/logs/ngeo.log
 
 # Reset MapCache
-rm -f /var/www/cache/TEST_SAR.sqlite /var/www/cache/TEST_OPTICAL.sqlite /var/www/cache/TEST_ASA_WSM.sqlite /var/www/cache/TEST_MER_FRS.sqlite
-touch /var/www/cache/TEST_SAR.sqlite /var/www/cache/TEST_OPTICAL.sqlite /var/www/cache/TEST_ASA_WSM.sqlite /var/www/cache/TEST_MER_FRS.sqlite
-chmod go+w /var/www/cache/TEST_SAR.sqlite /var/www/cache/TEST_OPTICAL.sqlite /var/www/cache/TEST_ASA_WSM.sqlite /var/www/cache/TEST_MER_FRS.sqlite
+rm -f /var/www/cache/TEST_SAR.sqlite /var/www/cache/TEST_OPTICAL.sqlite /var/www/cache/TEST_ASA_WSM.sqlite /var/www/cache/TEST_MER_FRS.sqlite /var/www/cache/TEST_MER_FRS_FULL.sqlite /var/www/cache/TEST_MER_FRS_FULL_NO_BANDS.sqlite /var/www/cache/TEST_GOOGLE_MERCATOR.sqlite
+touch /var/www/cache/TEST_SAR.sqlite /var/www/cache/TEST_OPTICAL.sqlite /var/www/cache/TEST_ASA_WSM.sqlite /var/www/cache/TEST_MER_FRS.sqlite /var/www/cache/TEST_MER_FRS_FULL.sqlite /var/www/cache/TEST_MER_FRS_FULL_NO_BANDS.sqlite /var/www/cache/TEST_GOOGLE_MERCATOR.sqlite
 
 # Upload test data
-sudo cp /var/ngeob_autotest/autotest/data/reference_test_data/*.jpg /var/ngeob_data/storage/
-sudo cp /var/ngeob_autotest/autotest/data/test_data/*.tif /var/ngeob_data/storage/
-sudo cp /var/ngeob_autotest/autotest/data/test_data/*.jpg /var/ngeob_data/storage/
-sudo cp /var/ngeob_autotest/autotest/data/feed_test_data/*.png /var/ngeob_data/storage/
-sudo cp /var/ngeob_autotest/autotest/data/aiv_test_data/*.jpg /var/ngeob_data/storage/
-sudo cp /var/ngeob_autotest/autotest/data/merge_test_data/*.jpg /var/ngeob_data/storage/
+cp /var/ngeob_autotest/data/reference_test_data/*.jpg /var/www/store/
+cp /var/ngeob_autotest/data/test_data/*.tif /var/www/store/
+cp /var/ngeob_autotest/data/test_data/*.jpg /var/www/store/
+cp /var/ngeob_autotest/data/feed_test_data/*.png /var/www/store/
+cp /var/ngeob_autotest/data/aiv_test_data/*.jpg /var/www/store/
 
-sudo service httpd start
+# Make the instance read- and editable by apache
+chmod -R a+w /var/ngeob_autotest/
+chmod -R a+w /var/www/
+
+service httpd start

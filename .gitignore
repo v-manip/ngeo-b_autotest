@@ -4,6 +4,7 @@
 # Django
 /data/data.sqlite
 /data/mapcache.sqlite
+/data/test_mapcache.sqlite
 /static
 
 # EOxServer
@@ -15,3 +16,6 @@
 /logs/debug.log
 /logs/ngeo.log
 /results
+/data/failure/
+/data/optimized/
+/data/success/
