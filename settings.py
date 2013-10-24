@@ -33,7 +33,7 @@ Django settings for ngEO Browse Server's autotest instance.
 """
 from os.path import join
 
-PROJECT_DIR = '/var/ngeob/autotest'
+PROJECT_DIR = '/var/ngeob_autotest'
 PROJECT_URL_PREFIX = ''
 
 #TEST_RUNNER = 'eoxserver.testing.core.EOxServerTestRunner'
@@ -50,14 +50,14 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'ngeo',
-        'USER': 'vagrant',
-        'PASSWORD': 'vagrant',
+        'NAME': 'ngeo_browse_server_db',
+        'USER': 'ngeo_user',
+        'PASSWORD': 'oi4Zuush',
     },
     'mapcache': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/var/ngeob_data/mapcache.sqlite',
-        'TEST_NAME': '/var/ngeob_data/test_mapcache.sqlite',
+        'NAME': '/var/ngeob_autotest/data/mapcache.sqlite',
+        'TEST_NAME': '/var/ngeob_autotest/data/test_mapcache.sqlite',
     }
 }
 
@@ -146,10 +146,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'autotest.urls'
+ROOT_URLCONF = 'urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'autotest.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
