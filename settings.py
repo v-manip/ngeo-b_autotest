@@ -144,6 +144,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # For management of the per/request cache system.
+    'eoxserver.backends.middleware.BackendsCacheMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -184,6 +187,22 @@ INSTALLED_APPS = (
     'ngeo_browse_server.control',
     'ngeo_browse_server.mapcache',
 )
+
+# The configured EOxServer components. Components add specific functionality
+# to the EOxServer and must adhere to a given interface. In order to activate 
+# a component, its module must be included in the following list or imported at
+# some other place. To help configuring all required components, each module 
+# path can end with either a '*' or '**'. The single '*' means that all direct
+# modules in the package will be included. With the double '**' a recursive 
+# search will be done.
+COMPONENTS = (
+    'eoxserver.backends.storages.*',
+    'eoxserver.backends.packages.*',
+    'eoxserver.resources.coverages.metadata.formats.*',
+    'eoxserver.services.ows.wms.**',
+    'eoxserver.services.mapserver.**',
+)
+
 
 LOGGING = {
     'version': 1,
