@@ -186,6 +186,8 @@ INSTALLED_APPS = (
     'ngeo_browse_server.config',
     'ngeo_browse_server.control',
     'ngeo_browse_server.mapcache',
+    'vmanip_server.mesh_factory',
+    'vmanip_server.mesh_cache',
 )
 
 # The configured EOxServer components. Components add specific functionality
@@ -201,6 +203,8 @@ COMPONENTS = (
     'eoxserver.resources.coverages.metadata.formats.*',
     'eoxserver.services.ows.wms.**',
     'eoxserver.services.mapserver.**',
+    'vmanip_server.mesh_factory.ows.w3ds.**',
+    'vmanip_server.mesh_cache.ows.w3ds.**',
 )
 
 
