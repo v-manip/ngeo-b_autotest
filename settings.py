@@ -31,9 +31,10 @@
 Django settings for ngEO Browse Server's autotest instance.
 
 """
-from os.path import join
 
-PROJECT_DIR = '/var/ngeob_autotest'
+from os.path import join, abspath, dirname
+
+PROJECT_DIR = dirname(abspath(__file__))
 PROJECT_URL_PREFIX = ''
 
 #TEST_RUNNER = 'eoxserver.testing.core.EOxServerTestRunner'
