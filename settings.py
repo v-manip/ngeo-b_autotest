@@ -147,6 +147,7 @@ MIDDLEWARE_CLASSES = (
 
     # For management of the per/request cache system.
     'eoxserver.backends.middleware.BackendsCacheMiddleware',
+    'auth.authClient.AuthorizerClientMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
