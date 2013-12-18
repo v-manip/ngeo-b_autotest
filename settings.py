@@ -147,7 +147,7 @@ MIDDLEWARE_CLASSES = (
 
     # For management of the per/request cache system.
     'eoxserver.backends.middleware.BackendsCacheMiddleware',
-    'auth.authClient.AuthorizerClientMiddleware',
+    'eoxserver.services.auth.middleware.PDPMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -207,6 +207,7 @@ COMPONENTS = (
     'eoxserver.services.mapserver.**',
     'vmanip_server.mesh_factory.ows.w3ds.**',
     'vmanip_server.mesh_cache.ows.w3ds.**',
+    'eoxserver.services.auth.ngeoped.NgeoPEP',
 )
 
 
