@@ -207,7 +207,7 @@ COMPONENTS = (
     'eoxserver.services.mapserver.**',
     'vmanip_server.mesh_factory.ows.w3ds.**',
     'vmanip_server.mesh_cache.ows.w3ds.**',
-    'eoxserver.services.auth.ngeoped.NgeoPEP',
+    'eoxserver.services.auth.ngeopep.NgeoPEP',
 )
 
 
