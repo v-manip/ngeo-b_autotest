@@ -41,7 +41,7 @@
 #
 ################################################################################
 
-service httpd stop
+#service httpd stop
 
 # Reset DB with PostgreSQL:
 su postgres -c "dropdb ngeo_browse_server_db"
@@ -82,4 +82,4 @@ cp /var/ngeob_autotest/data/aiv_test_data/*.jpg /var/www/store/
 chmod -R a+w /var/ngeob_autotest/
 chmod -R a+w /var/www/
 
-service httpd start
+#service httpd start

@@ -188,6 +188,7 @@ INSTALLED_APPS = (
     'ngeo_browse_server.mapcache',
     'vmanip_server.mesh_factory',
     'vmanip_server.mesh_cache',
+    'south',
 )
 
 # The configured EOxServer components. Components add specific functionality
