@@ -9,7 +9,7 @@
         <rep:imageType>TIFF</rep:imageType>
         <rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
         <rep:rectifiedBrowse>
-            <rep:coordList>46.2686450 8.4784500 32.1902500 25.4101500</rep:coordList>
+            <rep:coordList>32.1902500 8.4784500 46.2686450 25.4101500</rep:coordList>
         </rep:rectifiedBrowse>
         <rep:startTime>2012-10-02T09:20:00Z</rep:startTime>
         <rep:endTime>2012-10-02T09:20:00Z</rep:endTime>
