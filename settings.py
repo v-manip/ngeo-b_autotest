@@ -188,7 +188,7 @@ INSTALLED_APPS = (
     'ngeo_browse_server.mapcache',
     'vmanip_server.mesh_factory',
     'vmanip_server.mesh_cache',
-    'south',
+    #'south',
 )
 
 # The configured EOxServer components. Components add specific functionality
@@ -205,7 +205,7 @@ COMPONENTS = (
     'eoxserver.services.ows.wcs.**',
     'eoxserver.services.ows.wms.**',
     'eoxserver.services.native.**',
-    'eoxserver.services.ows.wps.**',
+    #    'eoxserver.services.ows.wps.**',
     'eoxserver.services.mapserver.**',
     'vmanip_server.mesh_factory.ows.w3ds.**',
     'vmanip_server.mesh_cache.ows.w3ds.**',
