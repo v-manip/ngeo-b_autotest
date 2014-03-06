@@ -240,6 +240,11 @@ LOGGING = {
             'filename': join(PROJECT_DIR, 'logs', 'ngeo.log'),
             'formatter': 'verbose' if DEBUG else 'simple',
             'filters': [],
+        },
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+            'formatter': 'verbose' if DEBUG else 'simple',
         }
     },
     'loggers': {
@@ -253,6 +258,11 @@ LOGGING = {
             'level': 'DEBUG' if DEBUG else 'INFO',
             'propagate': False,
         },
+        'vmanip_server': {
+            'handlers': ['console'],
+            'level': 'DEBUG' if DEBUG else 'INFO',
+            'propagate': False,
+        }
     }
 }
 
