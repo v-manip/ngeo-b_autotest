@@ -235,6 +235,10 @@ LOGGING = {
             'filename': join(PROJECT_DIR, 'logs', 'ngeo.log'),
             'formatter': 'verbose' if DEBUG else 'simple',
             'filters': [],
+        },
+        'controller_server_notification': {
+            'level': 'WARNING',
+            'class': 'ngeo_browse_server.control.control.notification.NotifyControllerServerHandler',
         }
     },
     'loggers': {
@@ -244,7 +248,7 @@ LOGGING = {
             'propagate': False,
         },
         'ngeo_browse_server': {
-            'handlers': ['ngeo_file'],
+            'handlers': ['ngeo_file', 'controller_server_notification'],
             'level': 'DEBUG' if DEBUG else 'INFO',
             'propagate': False,
         },
