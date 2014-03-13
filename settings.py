@@ -203,6 +203,7 @@ COMPONENTS = (
     'eoxserver.services.ows.wms.**',
     'eoxserver.services.ows.wcs.**',
     'eoxserver.services.mapserver.**',
+    'eoxserver.services.native.**',
 )
 
 
