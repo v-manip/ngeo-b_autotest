@@ -201,6 +201,7 @@ COMPONENTS = (
     'eoxserver.backends.packages.*',
     'eoxserver.resources.coverages.metadata.formats.*',
     'eoxserver.services.ows.wms.**',
+    'eoxserver.services.ows.wcs.**',
     'eoxserver.services.mapserver.**',
 )
 
