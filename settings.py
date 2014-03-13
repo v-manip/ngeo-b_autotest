@@ -31,9 +31,10 @@
 Django settings for ngEO Browse Server's autotest instance.
 
 """
-from os.path import join
 
-PROJECT_DIR = '/var/ngeob_autotest'
+from os.path import join, abspath, dirname
+
+PROJECT_DIR = dirname(abspath(__file__))
 PROJECT_URL_PREFIX = ''
 
 #TEST_RUNNER = 'eoxserver.testing.core.EOxServerTestRunner'
@@ -204,6 +205,7 @@ COMPONENTS = (
     'eoxserver.services.ows.wcs.**',
     'eoxserver.services.ows.wms.**',
     'eoxserver.services.mapserver.**',
+    'eoxserver.services.native.**',
     'vmanip_server.mesh_factory.ows.w3ds.**',
     'vmanip_server.mesh_cache.ows.w3ds.**',
 )
@@ -239,6 +241,10 @@ LOGGING = {
             'filename': join(PROJECT_DIR, 'logs', 'ngeo.log'),
             'formatter': 'verbose' if DEBUG else 'simple',
             'filters': [],
+        },
+        'controller_server_notification': {
+            'level': 'WARNING',
+            'class': 'ngeo_browse_server.control.control.notification.NotifyControllerServerHandler',
         }
     },
     'loggers': {
@@ -248,7 +254,7 @@ LOGGING = {
             'propagate': False,
         },
         'ngeo_browse_server': {
-            'handlers': ['ngeo_file'],
+            'handlers': ['ngeo_file', 'controller_server_notification'],
             'level': 'DEBUG' if DEBUG else 'INFO',
             'propagate': False,
         },
