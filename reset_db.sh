@@ -47,6 +47,17 @@ service httpd stop
 su postgres -c "dropdb ngeo_browse_server_db"
 rm -f /var/ngeob_autotest/data/mapcache.sqlite
 su postgres -c "createdb -O ngeo_user -T template_postgis ngeo_browse_server_db"
+
+python -c "
+from lxml import etree
+mapcache_xml_filename = '/var/www/cache/mapcache.xml'
+root = etree.parse(mapcache_xml_filename).getroot()
+for e in root.xpath('cache|source|tileset'):
+    root.remove(e)
+with open(mapcache_xml_filename, 'w') as f:
+    f.write(etree.tostring(root, pretty_print=True))
+"
+
 cd /var/ngeob_autotest/
 python manage.py syncdb --noinput
 python manage.py syncdb --database=mapcache --noinput
